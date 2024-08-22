@@ -1,8 +1,14 @@
-<form action="" method="post" id ="my_form">
+<form action="" method="post" id ="my_form" enctype="multipart/form-data">
     {%csrf_token%}
+    {{form.first_name.label}}
     {{form.first_name}}
+    <br>
+    {{form.last_name.label}}
     {{form.last_name}}
+    <br>
+    {{form.username.label}}
     {{form.username}}
+    <input type="submit" value="Save Changes">
 </form>
 
 <script>

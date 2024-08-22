@@ -68,11 +68,19 @@ def viewProfile(request):
 @login_required(login_url="login")
 def accountSettings(request):
     user = request.user
-    form = EditUserForm(user)
+    form = EditUserForm(instance=request.user)
+
+    if request.method == "POST":
+        form = EditUserForm(request.POST, instance=user)
+        if form.is_valid():
+            form.save()
+            return redirect("home")
+
     context = {
         "username": user.username,
         "first_name":user.first_name,
         "last_name": user.last_name,
+        "form": form
     }
     return render(request, "site_home/editProfilePage.html", context)
     # return render(request, "site_home/settingsPage.html", context)

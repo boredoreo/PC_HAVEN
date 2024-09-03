@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static%}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'style.css'%}">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <span class="menu-btn material-symbols-rounded"><i class="fas fa-bars"></i></span>
             <a href="{% url 'home' %}" class="logo">
-                <img src="images/logo.jpg" alt="PC-HAVEN Logo">
+                <img src="{% static 'images/logo.jpg'%}" alt="PC-HAVEN Logo">
                 <h2>PC-HAVEN</h2>
             </a>
             <ul class="links">
@@ -26,7 +27,7 @@
                 <li><a href="#">Donations</a></li>
                 <li><a href="#">Account</a></li>
             </ul>
-            <a href="login.html" class="login-btn">LOGIN</a>
+            <a href="{%url 'login'%}" class="login-btn">LOGIN</a>
         </nav>
     </header>
     <main>
@@ -75,4 +76,5 @@
         </div>
     </main>
 </body>
+<script src="{% static 'script.js' %}"></script>
 </html>

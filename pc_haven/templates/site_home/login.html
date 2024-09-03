@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - PC-HAVEN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <span class="menu-btn material-symbols-rounded"><i class="fas fa-bars"></i></span>
+            <a href="index.html" class="logo">
+                <img src="images/logo.jpg" alt="PC-HAVEN Logo">
+                <h2>PC-HAVEN</h2>
+            </a>
+            <ul class="links">
+                <span class="close-btn">X</span>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Catalogue</a></li>
+                <li><a href="#">Price Sort</a></li>
+                <li><a href="#">Donations</a></li>
+                <li><a href="#">Account</a></li>
+            </ul>
+            <a href="login.html" class="login-btn">LOGIN</a>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Welcome Back</h2>
+            <p>Please login with your personal information to continue.</p>
+            <form action="#" method="post">
+                {%csrf_token%}
+                <div class="input-field">
+                    <input type="text" name="username" id="username" required>
+                    <label>UserName</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="password" id="password" required>
+                    <label>Password</label>
+                </div>
+                <a href="#" class="forgot-pass">Forgot password?</a>
+                <button type="submit">Log In</button>
+            </form>
+            <div class="bottom-link">
+                Don't have an account?
+                <a href="signup.html">Sign Up</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

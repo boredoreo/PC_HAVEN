@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - PC-HAVEN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <span class="menu-btn material-symbols-rounded"><i class="fas fa-bars"></i></span>
+            <a href="{% url 'home' %}" class="logo">
+                <img src="images/logo.jpg" alt="PC-HAVEN Logo">
+                <h2>PC-HAVEN</h2>
+            </a>
+            <ul class="links">
+                <span class="close-btn">X</span>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="#">Catalogue</a></li>
+                <li><a href="#">Price Sort</a></li>
+                <li><a href="#">Donations</a></li>
+                <li><a href="#">Account</a></li>
+            </ul>
+            <a href="login.html" class="login-btn">LOGIN</a>
+        </nav>
+    </header>
+    <main>
+        <div class="container">
+            <h2>Create an Account</h2>
+            <p>To join the community, please sign up.</p>
+            <form action="#"  method="post">
+                {%csrf_token%}
+                <div class="input-field">
+                    {{form.last_name}}
+                    <label>Enter your Surname</label>
+                </div>
+                <div class="input-field">
+                    {{form.first_name}}
+                    <label>Enter your Firstname</label>
+                </div>
+                <div class="input-field">
+                    {{form.username}}
+                    <label>Enter UserName</label>
+                </div>
+                <div class="input-field">
+                    {{form.email}}
+                    <label>Enter your Email</label>
+                </div>
+                <div class="input-field">
+                    {{form.password1}}
+                    <label>Create Password</label>
+                </div>
+                <div class="input-field">
+                    {{form.password2}}
+                    <label>Confirm password</label>
+                </div>
+                <div class="policy-text">
+                    <input type="checkbox" id="policy">
+                    <label for="policy">
+                        I agree to the
+                        <a href="#">Terms & Conditions</a>
+                    </label>
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+            <div class="bottom-link">
+                Already have an account?
+                <a href="{% url 'login' %}">Log In</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,314 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: url("images/hero-bg.jpg") center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Welcome Section Styles */
+.welcome-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    background: rgba(0, 0, 0,0); /* Adds a slight overlay */
+}
+.welcome-container {
+    max-width: 800px;
+}
+
+.welcome-container h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.welcome-container p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+.cta-btn {
+    background: #00bcd4;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+    background: #0097a7;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 0 10px;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.1); /* Navbar background */
+}
+
+.navbar {
+    display: flex;
+    padding: 22px 0;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.navbar .menu-btn {
+    display: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.navbar .logo {
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    align-items: center;
+}
+
+.navbar .logo img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.navbar .logo h2 {
+    color: white;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+.navbar .links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.navbar .links .close-btn {
+    display: none;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 1.5rem;
+}
+
+.navbar .links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.navbar .links a:hover {
+    color: #19e8ff;
+}
+
+.navbar .login-btn {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 3px;
+    cursor: pointer;
+    background: white;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px; /* Ensures content is below the navbar */
+}
+
+.container {
+    max-width: 720px;
+    width: 100%;
+    background: white;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.container form .input-field {
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+}
+
+.container form .input-field input {
+    width: 100%;
+    height: 100%;
+    outline: none;
+    padding: 0 15px;
+    font-size: 0.95rem;
+    border-radius: 3px;
+    border: 1px solid grey;
+}
+
+.input-field input:focus {
+    border-color: #00bcd4;
+}
+
+.input-field input:is(:focus, :valid) {
+    padding: 16px 15px 0;
+}
+
+.container form .input-field label {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    color: grey;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: 0.2s ease;
+}
+
+.container form .input-field input:is(:focus, :valid) ~ label {
+    color: #00bcd4;
+    font-size: 0.75rem;
+    transform: translateY(-120%);
+}
+
+.container a {
+    color: #00bcd4;
+    text-decoration: none;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+.container .forgot-pass {
+    display: inline-flex;
+    margin-top: 14px;
+    font-size: 0.95rem;
+}
+
+.container .bottom-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.container form button {
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 14px 0;
+    border-radius: 3px;
+    margin: 25px 0;
+    color: white;
+    cursor: pointer;
+    background: #00bcd4;
+    transition: 0.2s ease;
+}
+
+.container form button:hover {
+    background: #0097a7;
+}
+
+.signup .policy-text {
+    display: flex;
+    align-items: center;
+    margin-top: 14px;
+    font-size: 0.95rem;
+}
+
+.signup .policy-text input {
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1080px) {
+    
+    .navbar :is(.menu-btn, .links .close-btn) {
+        display: block;
+    }
+    .navbar {
+        padding: 15px 0;
+    }
+    .navbar .logo img {
+        display: none;
+    }
+
+    .navbar .logo h2 {
+        font-size: 1.4rem;
+    }
+    .navbar .links {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        display: block;
+        padding-top: 60px;
+        text-align: center;
+        background: white;
+        transition: 0.2s ease;
+    }
+    .navbar .menu-btn {
+        z-index: 1000; /* Ensure the menu-btn is on top */
+    }
+    
+
+    .navbar .links.show-menu {
+        left: 0;
+    }
+
+    .navbar .links a {
+        color: black;
+        display: inline-flex;
+        margin: 20px 0;
+        font-size: 1.2rem;
+    }
+    .navbar .login-btn {
+        font-size: 0.9rem;
+        padding: 7px 10px;
+    }
+}
+
+@media (max-width: 760px) {
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+    .form-box .form-details {
+        display: none;
+    }
+    .form-box .form-content {
+        padding: 30px 20px;
+    }
+}

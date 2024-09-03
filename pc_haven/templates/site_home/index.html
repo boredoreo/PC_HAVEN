@@ -1,12 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC-HAVEN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-<a href="{% url 'login' %}">login</a>
-
-<br>
-<a href="{%url 'signup' %}">signup</a>
-<br>
-<a href="{%url 'logout' %}">Logout</a>
-
-<br>
-{% if request.user.is_authenticated%}
-<a href="{%url 'settings' %}">Account</a>
-{%endif%}
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <span class="menu-btn"><i class="fas fa-bars"></i></span>
+            <a href="#" class="logo">
+                <img src="images/logo.jpg" alt="">
+                <h2>PC-HAVEN</h2>
+            </a>
+            <ul class="links">
+                <span class="close-btn">X</span>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="catalogue.html">Catalogue</a></li>
+                <li><a href="pricesort.html">Price Sort</a></li>
+                <li><a href="donations.html">Donations</a></li>
+                <li><a href="login.html">Account</a></li>
+            </ul>
+            <button class="login-btn"><a href="login.html">LOGIN</a></button>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="welcome-section">
+            <div class="welcome-container">
+                <h1>Welcome to PC-HAVEN</h1>
+                <p>Your one-stop shop for everything PC-related. Explore our extensive catalog, find the best deals, and join our community today!</p>
+                <a href="catalogue.html" class="cta-btn">Explore Now</a>
+            </div>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

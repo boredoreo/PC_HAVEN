@@ -4,6 +4,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
 
 
+from django.urls import reverse_lazy
+from django.contrib.auth.views import PasswordResetView
+from django.contrib.messages.views import SuccessMessageMixin
+
+
+
 from .forms import CreateUserForm, EditUserForm
 
 # Create your views here.
@@ -93,3 +99,14 @@ def editProfile(request):
         "form":form
     }
     return render(request, "site_home/editProfilePage.html", context)
+
+
+class ResetPasswordView(SuccessMessageMixin, PasswordResetView):
+    template_name = 'site_home/password_reset.html'
+    email_template_name = 'site_home/password_reset_email.html'
+    subject_template_name = 'site_home/password_reset_subject'
+    success_message = "We've emailed you instructions for setting your password, " \
+                      "if an account exists with the email you entered. You should receive them shortly." \
+                      " If you don't receive an email, " \
+                      "please make sure you've entered the address you registered with, and check your spam folder."
+    success_url = reverse_lazy('home')
